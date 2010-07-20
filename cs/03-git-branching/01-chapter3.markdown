@@ -23,17 +23,17 @@ Váš repozitář Git nyní obsahuje pět objektů: jeden blob pro obsah každé
 který blob, a jednu revizi s ukazatelem na kořenový strom a se všemi metadaty revize. Data ve vašem repozitáři Git se dají schematicky znázornit jako na obrázku 3.1.
 
 
-Vložit 18333fig0301.png 
+^Insert 18333fig0301.png 
 Obrázek 3-1. Repozitář s daty jedné revize.
 
 Jestliže v souborech provedete změny a zapíšete je, další revize uloží ukazatel na revizi, jež jí bezprostředně předcházela. Po dalších dvou revizích bude vaše historie vypadat jako na obrázku 3.2.
 
-Vložit 18333fig0302.png 
+^Insert 18333fig0302.png 
 Obrázek 3-2. Data objektů Git pro několik revizí.
 
 Větev je v systému Git jen snadno přemístitelným ukazatelem na jednu z těchto revizí. Výchozím názvem větve v systému Git je master (hlavní větev). Při prvním zapisování revizí dostanete hlavní větev, jež bude ukazovat na poslední revizi, kterou jste zapsali. Pokaždé, když zapíšete novou revizi, větev se automaticky posune vpřed.
 
-Vložit 18333fig0303.png 
+^Insert 18333fig0303.png 
 Obrázek 3-3. Větev ukazující do historie dat revizí.
 
 Co se stane, když vytvoříte novou větev? Ano, nová větev znamená vytvoření nového ukazatele, s nímž můžete pohybovat. Řekněme, že vytvoříte novou větev a nazvete ji testing. Učiníte tak příkazem git branch:
@@ -42,12 +42,12 @@ Co se stane, když vytvoříte novou větev? Ano, nová větev znamená vytvoře
 
 Tento příkaz vytvoří nový ukazatel na stejné revizi, na níž se právě nacházíte (viz obrázek 3.4).
 
-Vložit 18333fig0304.png 
+^Insert 18333fig0304.png 
 Obrázek 3-4. Několik větví ukazujících do historie dat revizí.
 
 Jak Git pozná, na jaké větvi se právě nacházíte? Používá speciální ukazatel zvaný HEAD. Nenechte se mást, tento HEAD je velmi odlišný od všech koncepcí v ostatních systémech VCS, na něž jste možná zvyklí, jako Subversion nebo CVS. V systému Git se jedná o ukazatel na lokální větev, na níž se právě nacházíte. V našem případě jste však stále ještě na hlavní větvi. Příkazem git branch jste pouze vytvořili novou větev, zatím jste na ni nepřepnuli (viz obrázek 3.5).
 
-Vložit 18333fig0305.png 
+^Insert 18333fig0305.png 
 Obrázek 3-5. Soubor HEAD ukazující na větev, na níž se nacházíte.
 
 Chcete-li přepnout na existující větev, spusťte příkaz git checkout. My můžeme přepnout na novou větev testing:
@@ -55,7 +55,7 @@ Chcete-li přepnout na existující větev, spusťte příkaz git checkout. My m
 	$ git checkout testing
 
 
-Vložit 18333fig0306.png
+^Insert 18333fig0306.png
 Obrázek 3-6. Soubor HEAD ukazuje po přepnutí na jinou větev.
 
 Tímto příkazem přesunete ukazatel HEAD tak, že ukazuje na větev testing (viz obrázek 3.6).
@@ -67,7 +67,7 @@ A jaký to má smysl? Dobře, proveďme další revizi:
 
 obrázek 3-7 zobrazuje výsledek.
 
-Vložit 18333fig0307.png 
+^Insert 18333fig0307.png 
 Obrázek 3-7. Větev, na niž ukazuje soubor HEAD, se posouvá vpřed s každou revizí.
 
 Výsledek je zajímavý z toho důvodu, že se větev testing posunula vpřed, zatímco hlavní větev stále ukazuje na revizi, na níž jste se nacházeli v okamžiku, kdy jste spustili příkaz git checkout a přepnuli tím větve.
@@ -78,7 +78,7 @@ Přepněme zpět na hlavní větev.
 
 Obrázek 3-8 zobrazuje výsledek.
 
-Vložit 18333fig0308.png 
+^Insert 18333fig0308.png 
 Obrázek 3-8. Ukazatel HEAD se po příkazu git checkout přesune na jinou větev..
 
 Výsledek ukazuje obrázek 3.8. Tento příkaz provedl dvě věci. Přemístil ukazatel HEAD zpět, takže nyní ukazuje na hlavní větev, a vrátil soubory ve vašem pracovním adresáři zpět ke snímku, na nějž hlavní větev ukazuje. To také znamená, že změny, které od teď provedete, se odštěpí od starší verze projektu. V podstatě dočasně vrátíte všechny změny, které jste provedli ve větvi testing, a vydáte se jiným směrem.
@@ -90,7 +90,7 @@ Proveďme pár změn a zapišme další revizi:
 
 Nyní se historie vašeho projektu rozdělila (viz obrázek 3.9). Vytvořili jste novou větev, přepnuli jste na ni, provedli jste v ní změny a poté jste přepnuli zpět na hlavní větev, v níž jste rovněž provedli změny. Oboje tyto změny jsou oddělené na samostatných větvích. Můžete mezi nimi přepínat tam a zpět, a až uznáte za vhodné, můžete je sloučit. To vše jste provedli pomocí jednoduchých příkazů branch a checkout.
 
-Vložit 18333fig0309.png 
+^Insert 18333fig0309.png 
 Obrázek 3-9. Historie větví se rozdělila.
 
 Vzhledem k tomu, že větev v systému Git tvoří jeden jednoduchý soubor, obsahující 40 znaků kontrolního součtu SHA-1 revize, na niž ukazuje, je snadné větve vytvářet i odstraňovat. Vytvořit novou větev je právě tak snadné a rychlé jako zapsat 41 bytů do souboru (40 znaků a jeden nový řádek).
@@ -118,7 +118,7 @@ následující:
 
 Řekněme, že pracujete na projektu a už jste vytvořili několik revizí (viz obrázek 3.10).
 
-Vložit 18333fig0310.png 
+^Insert 18333fig0310.png 
 Obrázek 3-10. A short and simple commit history.
 
 Rozhodli jste se, že budete pracovat na chybě č. 53, ať už vaše společnost používá jakýkoli systém sledování chyb. Přesněji řečeno, Git není začleněn do žádného konkrétního systému sledování chyb, ale protože je chyba č. 53 významná a chcete na ní pracovat, vytvoříte si pro ni novou větev. Abyste vytvořili novou větev a rovnou na ni přepnuli, můžete spustit příkaz git checkout s přepínačem -b:
@@ -133,7 +133,7 @@ Tímto způsobem jste spojili dva příkazy:
 
 Obrázek 3.11 ukazuje výsledek
 
-Vložit 18333fig0311.png 
+^Insert 18333fig0311.png 
 Obrázek 3-11. Creating a new branch pointer.
 
 Pracujete na webových stránkách a zapíšete několik revizí. S každou novou revizí se větev iss53 posune vpřed, protože jste provedli její checkout (to znamená, že jste na ni přepnuli a ukazuje na ni soubor HEAD – viz obrázek 3.12):
@@ -141,7 +141,7 @@ Pracujete na webových stránkách a zapíšete několik revizí. S každou novo
 	$ vim index.html
 	$ git commit -a -m 'added a new footer [issue 53]'
 
-Vložit 18333fig0312.png 
+^Insert 18333fig0312.png 
 Obrázek 3-12. The iss53 branch has moved forward with your work.
 
 V tomto okamžiku vám zavolají, že se na webových stránkách vyskytl problém, který musíte okamžitě vyřešit. Jelikož pracujete v systému Git, nemusíte svou opravu vytvářet uprostřed změn, které jste provedli v části iss53, ani nemusíte dělat zbytečnou práci, abyste všechny tyto změny vrátili, než budete moci začít pracovat na opravě produkční verze stránek. Jediné, co teď musíte udělat, je přepnout zpět na hlavní větev.
@@ -162,7 +162,7 @@ Nyní přichází na řadu hotfix. Vytvořme větev s hotfixem, v níž budeme p
 	[hotfix]: created 3a0874c: "fixed the broken email address"
 	 1 files changed, 0 insertions(+), 1 deletions(-)
 
-Vložit 18333fig0313.png 
+^Insert 18333fig0313.png 
 Obrázek 3-13. hotfix branch based back at your master branch point.
 
 Můžete provádět testování, ujistit se, že hotfix splňuje všechny požadavky, a pak můžete větev začlenit (merge) zpět do hlavní větve, aby byla připravena do produkce. Učiníte tak příkazem git merge:
@@ -196,7 +196,7 @@ Nyní můžete přepnout zpět na větev s rozdělanou prací a pokračovat na c
 	[iss53]: created ad82d7a: "finished the new footer [issue 53]"
 	 1 files changed, 1 insertions(+), 0 deletions(-)
 
-Vložit 18333fig0315.png 
+^Insert 18333fig0315.png 
 Obrázek 3-15. Větev iss53 může nezávisle postupovat vpřed.
 
 Za zmínku stojí, že práce, kterou jste udělali ve větvi hotfix, není obsažena v souborech ve větvi iss53. Pokud potřebujete tyto změny do větve natáhnout, můžete začlenit větev master do větve iss53 – použijte příkaz git merge master. Druhou možností je s integrací změn vyčkat a provést ji až ve chvíli, kdy budete chtít větev iss53 natáhnout zpět do větve.
@@ -212,14 +212,14 @@ Předpokládejme, že jste dokončili práci na chybě č. 53 a nyní byste ji r
 
 Toto už se trochu liší od začlenění větve hotfix, které jste prováděli před chvílí. V tomto případě se historie vývoje od určitého bodu v minulosti rozbíhala. Vzhledem k tomu, že revize na větvi, na níž se nacházíte, není přímým předkem větve, kterou chcete začlenit, Git bude muset podniknout určité kroky. Git v tomto případě provádí jednoduché třícestné sloučení: vychází ze dvou snímků, na které ukazují větve, a jejich společného předka.
 
-Vložit 18333fig0316.png 
+^Insert 18333fig0316.png 
 Obrázek 3-16. Git automatically identifies the best common-ancestor merge base for branch merging.
 
 Git tentokrát neposune ukazatel větve vpřed, ale vytvoří nový snímek jako výsledek tohoto třícestného sloučení a automaticky vytvoří novou revizi, která bude na snímek ukazovat (viz obrázek 3.17). Takové revizi se říká revize sloučením (merge commit) a její zvláštností je to, že má více než jednoho rodiče.
 
 Na tomto místě bych chtěl zopakovat, že Git určuje nejvhodnějšího společného předka, který bude použit jako základna pro sloučení, automaticky. Liší se tím od systému CVS i Subversion (před verzí 1.5), kde musí vývojář při slučování najít nejvhodnější základnu pro sloučení sám. Slučování větví je tak v systému Git o poznání jednodušší než v těchto ostatních systémech.
 
-Vložit 18333fig0317.png 
+^Insert 18333fig0317.png 
 Obrázek 3-17. Git automatically creates a new commit object that contains the merged work.
 
 Nyní, když jste svou práci sloučili, větev iss53 už nebudete potřebovat. Můžete ji smazat a poté ručně zavřít tiket v systému sledování tiketů:
@@ -359,12 +359,12 @@ jako byla vaše větev iss53) ve chvíli, kdy je k tomu vše připraveno a nehro
 
 Ve skutečnosti hovoříme o ukazatelích pohybujících se vzhůru po linii revizí, které zapisujete. Stabilní větve leží v linii historie revizí níže a nové, neověřené větve se nacházejí nad nimi (viz obrázek 3.18).
 
-Vložit 18333fig0318.png 
+^Insert 18333fig0318.png 
 Obrázek 3-18. Stabilnější větve většinou leží v historii revizí níže.
 
 Snáze si je můžeme představit jako pracovní zásobníky, v nichž se sada revizí dostává do stabilnějšího zásobníku, když úspěšně absolvovala testování (viz obrázek 3.19).
 
-Vložit 18333fig0319.png 
+^Insert 18333fig0319.png 
 Obrázek 3-19. Větve si můžeme představit jako zásobníky (stack): master – hlavní větev, develop – větev vývoje, topic – tematická větev.
 
 Tento postup lze použít hned pro několik úrovní stability. Některé větší projekty mají také větev proposed nebo pu (proposed updates, návrh aktualizací) s integrovanými větvemi, které nemusí být nutně způsobilé k začlenění do větve next nebo master. Idea je taková, že se větve nacházejí na různé úrovni stability. Jakmile dosáhnou stability o stupeň vyšší, jsou začleněny do větve nad nimi. Není nutné používat při práci několik dlouhých větví, ale často to může být užitečné, zejména pokud pracujete ve velmi velkých nebo komplexních projektech.
@@ -377,13 +377,13 @@ Viděli jste to v předchozí části, kdy jste si vytvořili větve iss53 a hot
 
 Uvažujme nyní následující situaci: pracujete na projektu v hlavní větvi (master), odbočíte z ní k vyřešení jednoho problému (iss91), chvíli na něm pracujete, ale vytvoříte ještě další větev, abyste zkusili jiné řešení stejné chyby (iss91v2). Pak se vrátíte zpět na hlavní větev, kde pokračujete v práci, než dostanete nápad, který by se možná mohl osvědčit, a tak pro něj vytvoříte další větev (dumbidea). Historie revizí bude vypadat zhruba jako na obrázku 3.20.
 
-Vložit 18333fig0320.png 
+^Insert 18333fig0320.png 
 Obrázek 3-20. Historie revizí s několika tematickými větvemi
 
 Řekněme, že se nyní rozhodnete, že druhé řešení vašeho problému bude vhodnější (iss91v2). Dále jste také ukázali svůj nápad ve větvi dumbidea kolegům a ti ho považují za geniální. Původní větev iss91
 tak nyní můžete zahodit (s ní i revize C5 a C6) a začlenit zbylé dvě větve. Vaši historii v tomto stavu znázorňuje obrázek 3.21.
 
-Vložit 18333fig0321.png 
+^Insert 18333fig0321.png 
 Obrázek 3-21. Vaše historie po začlenění větví „dumbidea“ a „iss91v2“
 
 Při tom všem, co nyní děláte, je důležité mít na paměti, že všechny tyto větve jsou čistě lokální. Veškeré větvení a slučování se odehrává pouze v repozitáři Git, neprobíhá žádná komunikace se serverem.
@@ -396,27 +396,27 @@ Vzdálené větve mají podobu (vzdálený repozitář)/(větev). Například: C
 
 Možná to není úplně jasné, a tak uvedeme malý příklad. Řekněme, že máte v síti server Git označený git.ourcompany.com. Pokud provedete klonování z tohoto serveru, Git ho automaticky pojmenuje origin, stáhne z něj všechna data, vytvoří ukazatel, který bude označovat jeho hlavní větev, a lokálně ji pojmenuje origin/master. Tuto větev nemůžete přesouvat. Git vám dá rovněž vaši vlastní hlavní větev, která bude začínat ve stejném místě jako hlavní větev serveru origin. Máte tak definován výchozí bod pro svoji práci (viz obrázek 3.22).
 
-Vložit 18333fig0322.png 
+^Insert 18333fig0322.png 
 Obrázek 3-22. Příkaz git clone vám vytvoří vlastní hlavní větev a větev origin/master, ukazující na hlavní větev serveru origin.
 
 Pokud nyní budete pracovat na své lokální hlavní větvi a někdo z kolegů mezitím pošle svou práci na server git.ourcompany.com a aktualizuje jeho hlavní větev, budou se vaše historie vyvíjet odlišně. A dokud zůstanete od serveru origin odpojeni, váš ukazatel origin/master se nemůže přemístit (viz obrázek 3.23).
 
-Vložit 18333fig0323.png 
+^Insert 18333fig0323.png 
 Obrázek 3-23. Pokud pracujete lokálně a někdo jiný odešle svou práci na vzdálený server, obě historie se rozejdou.
 
 K synchronizaci své práce použijte příkaz git fetch origin. Tento příkaz zjistí, který server je „origin“ (v našem případě je to git.ourcompany.com), vyzvedne z něj všechna data, která ještě nemáte, a aktualizuje vaši lokální databázi. Při tom přemístí ukazatel origin/master na novou, aktuálnějšípozici (viz obrázek 3.24).
 
-Vložit 18333fig0324.png 
+^Insert 18333fig0324.png 
 Obrázek 3-24. Příkaz git fetch aktualizuje vaše reference na vzdálený server.
 
 Abychom si mohli ukázat, jak se pracuje s několika vzdálenými servery a jak vypadají vzdálené větve takových vzdálených projektů, předpokládejme, že máte ještě další interní server Git, který při vývoji používá pouze jeden z vašich sprint teamů. Tento server se nachází na git.team1.ourcompany.com. Můžete ho přidat jako novou vzdálenou referenci k projektu, na němž právě pracujete – spusťte příkaz git remote add (viz kapitola 2). Pojmenujte tento vzdálený server jako teamone, což bude zkrácený název pro celou URL adresu (viz obrázek 3.25).
 
-Vložit 18333fig0325.png 
+^Insert 18333fig0325.png 
 Obrázek 3-25. Přidání dalšího vzdáleného serveru.
 
 Nyní můžete spustit příkaz git fetch teamone, který ze serveru vyzvedne vše, co ještě nemáte. Protože je tento server podmnožinou dat, která jsou právě na serveru origin, Git nevyzvedne žádná data, ale nastaví vzdálenou větev nazvanou teamone/master tak, aby ukazovala na revizi, kterou má server teamone nastavenou jako hlavní větev (viz obrázek 3.26).
 
-Vložit 18333fig0326.png 
+^Insert 18333fig0326.png 
 Obrázek 3-26. Lokálně získáte referenci na pozici hlavní větve serveru teamone.
 
 ### Odesílání ###
@@ -491,10 +491,10 @@ V systému Git existují dvě základní možnosti, jak integrovat změny z jedn
 
 Pokud se vrátíme k našemu dřívějšímu příkladu z části o slučování větví (viz obrázek 3.27), vidíme, že jsme svoji práci rozdělili a vytvářeli revize ve dvou různých větvích. Víme, že nejjednodušším způsobem, jak integrovat větve, je příkaz merge. Ten provede třícestné sloučení mezi dvěma posledními snímky (C3 a C4) a jejich nejmladším společným předkem (C2), přičemž vytvoří nový snímek (a novou revizi) – viz obrázek 3.28.
 
-Vložit 18333fig0327.png 
+^Insert 18333fig0327.png 
 Obrázek 3-27. Vaše původně rozdělená historie revizí
 
-Vložit 18333fig0328.png 
+^Insert 18333fig0328.png 
 Obrázek 3-28. Integrace rozdělené historie sloučením větví
 
 Existuje však ještě jiný způsob. Můžete vzít záplatu se změnou, kterou jste provedli revizí C3, a aplikovat ji na vrcholu revize C4. V systému Git se tato metoda nazývá přeskládání (rebasing). Příkazem rebase vezmete všechny změny, které byly zapsány na jedné větvi, a necháte je znovu provést na jiné větvi.
@@ -507,12 +507,12 @@ V našem případě tedy provedete následující:
 
 Přeskládání funguje takto: systém najde společného předka obou větví (větve, na níž se nacházíte, a větve, na kterou přeskládáváte), provede příkaz diff pro všechny revize větve, na níž se nacházíte, uloží zjištěné rozdíly do dočasných souborů, vrátí aktuální větev na stejnou revizi jako větev, na kterou přeskládáváte, a nakonec po jedné aplikuje všechny změny. Tento proces je naznačen na obrázku 3.29.
  
-Vložit 18333fig0329.png 
+^Insert 18333fig0329.png 
 Obrázek 3-29. Přeskládání změny provedené v revizi C3 na revizi C4
 
 Nyní můžete přejít zpět na hlavní větev a provést sloučení „rychle vpřed“ (viz obrázek 3.30).
 
-Vložit 18333fig0330.png 
+^Insert 18333fig0330.png 
 Obrázek 3-30. „Rychle vpřed“ po hlavní větvi
 
 Pokud si prohlížíte log přeskládané větve, vypadá jako lineární historie – zdá se, jako by veškerá práce probíhala v jedné linii, ačkoli původně byla paralelní.
@@ -527,7 +527,7 @@ Ještě jednou bychom chtěli upozornit, že snímek, na který ukazuje závěre
 
 Opětovné provedení změn pomocí příkazu rebase můžete využít i jiným účelům než jen k přeskládání větve. Vezměme například historii na brázku 3.31. Vytvořili jste novou tematickou větev (server), pomocí níž chcete do svého projektu přidat funkci na straně serveru, a zapsali jste revizi.
 
-Vložit 18333fig0331.png 
+^Insert 18333fig0331.png 
 Obrázek 3-31. Historie s tematickou větví obsahující další tematickou větev.
 
 Předpokládejme, že nyní chcete začlenit změny provedené na straně klienta do své hlavní linie k vydání, ale prozatím chcete počkat se změnami na straně serveru, dokud nebudou pečlivě otestovány. Můžete vzít změny na větvi client, které nejsou na větvi server (C8 a C9), a nechat je znovu provést na hlavní větvi. Použijte k tomu příkaz git rebase v kombinaci s parametrem --onto:
@@ -536,7 +536,7 @@ Předpokládejme, že nyní chcete začlenit změny provedené na straně klient
 
 Tím v podstatě říkáte: „Proveď checkout větve client, zjisti záplaty ze společného předka větví client a server a znovu je aplikuj na hlavní větev master.“ Postup je možná trochu složitý, ale výsledek, znázorněný na obrázku 3.32, stojí opravdu za to.
 
-Vložit 18333fig0332.png 
+^Insert 18333fig0332.png 
 Obrázek 3-32. Přeskládání tematické větve, která byla součástí jiné tematické větve 72.
 
 Nyní můžete posunout hlavní větev „rychle vpřed“ (viz obrázek 3.33):
@@ -544,7 +544,7 @@ Nyní můžete posunout hlavní větev „rychle vpřed“ (viz obrázek 3.33):
 	$ git checkout master
 	$ git merge client
 
-Vložit 18333fig0333.png 
+^Insert 18333fig0333.png 
 Obrázek 3-33. Posun hlavní větve rychle vpřed na konec změn přeskládaných z větve client
 
 Řekněme, že se později rozhodnete natáhnout i větev server. Větev server můžete přeskládat na hlavní větev příkazem git rebase [základna] [tematická větev], aniž by bylo nutné provést nejprve checkout. Příkaz automaticky provede checkout tematické větve (v tomto případě větve server) a přeskládá její změny na základnu (angl. base branch, v tomto případě master):
@@ -553,7 +553,7 @@ Obrázek 3-33. Posun hlavní větve rychle vpřed na konec změn přeskládanýc
 
 Příkaz provede změny obsažené ve větvi server ještě jednou na vrcholu hlavní větve, jak je znázorněno na obrázku 3.34.
 
-Vložit 18333fig0334.png 
+^Insert 18333fig0334.png 
 Obrázek 3-34. Přeskládání větve server na vrcholu hlavní větve.
 
 Poté se můžete přesunout „rychle vpřed“ po základně (větev master):
@@ -566,7 +566,7 @@ Poté můžete větev client i server smazat, protože všechna práce z nich je
 	$ git branch -d client
 	$ git branch -d server
 
-Vložit 18333fig0335.png 
+^Insert 18333fig0335.png 
 Obrázek 3-35. Konečná historie revizí
 
 ### Rizika spojená s přeskládáním ###
@@ -581,12 +581,12 @@ Při přeskládání dat zahodíte existující revize a vytvoříte nové, kter
 
 Podívejme se na malý příklad, jaké problémy může přeskládání již zveřejněných dat způsobit. Představme si situaci, kdy jste naklonovali repozitář z centrálního serveru a provedli jste v něm několik změn. Vaše historie revizí bude vypadat jako na obrázku 3.36.
 
-Vložit 18333fig0336.png 
+^Insert 18333fig0336.png 
 Obrázek 3-36. Naklonovali jste repozitář a provedli v něm změny.
 
 Někdo jiný teď provede jiné úpravy, jejichž součástí bude i začlenění, a odešle svou práci na centrální  server. Vy tyto změny vyzvednete a začleníte novou vzdálenou větev do své práce – vaše historie teď vypadá jako na obrázku 3.37.
 
-Vložit 18333fig0337.png 
+^Insert 18333fig0337.png 
 Obrázek 3-37. Vyzvedli jste další revize a začlenili je do své práce.
 
 Jenže osoba, která odeslala a začlenila své změny, se rozhodne vrátit a svou práci raději přeskládat. Provede příkaz git push --force a přepíše historii na serveru. Vy poté znovu vyzvednete data ze serveru a stáhnete nové revize.

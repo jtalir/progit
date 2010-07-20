@@ -191,7 +191,7 @@ Až dokončíte celé nastavení, můžete spustit příkaz diff, např.:
 
 Výstup příkazu diff se nezobrazí na příkazovém řádku, ale Git spustí program P4Merge v podobě, jak je zachycen na obrázku 7.1.
 
-Vložit 18333fig0701.png 
+^Insert 18333fig0701.png 
 Obrázek 7-1. P4Merge.
 
 Jestliže se pokusíte sloučit dvě větve a dojde při tom ke konfliktu, můžete spustit příkaz git mergetool. Příkaz spustí program P4Merge, v němž budete moci v grafickém uživatelském rozhraní konflikt vyřešit.
@@ -395,10 +395,10 @@ Tento výsledek má však omezené použití. Pokud nahradíte klíčové slovo 
 
 Jak zjistíte, můžete pro substituce v souborech určených k zapsání/checkoutu napsat i vlastní filtry. Jedná se o filtry clean a smudge. V souboru .gitattributes můžete určit filtr pro konkrétní umístění a nastavit skripty, jimiž budou zpracovány soubory těsně před jejich zapsáním („clean“ – viz obrázek 7.2) a těsně před checkoutem („smudge – viz obrázek 7.3). Tyto filtry lze nastavit k různým šikovným úkonům.
 
-Vložit 18333fig0702.png 
+^Insert 18333fig0702.png 
 Obrázek 7-2. Filtr smudge spuštěný při checkoutu – git checkout
 
-Vložit 18333fig0703.png 
+^Insert 18333fig0703.png 
 Obrázek 7-3. Filtr clean spuštěný při přípravě souborů k zapsání – git add
 
 Původní zpráva k revizi s touto funkcí dává jednoduchý příklad, jak před zapsáním spustit celý váš zdrojový kód C programem indent. Tuto možnost lze aplikovat nastavením atributu filter v souboru .gitattributes tak, aby filtroval soubory *.c filtrem indent:
