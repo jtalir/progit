@@ -120,7 +120,7 @@ Syntax master^{tree} specifikuje objekt stromu, na nějž ukazuje poslední revi
 
 Data, která Git ukládá, vypadají v principu jako na obrázku 9.1.
 
-^Insert 18333fig0901.png 
+Insert 18333fig0901.png 
 Obrázek 9-1. Zjednodušený model dat v systému Git
 
 Můžete si vytvořit i vlastní strom. Git běžně vytváří strom tak, že vezme stav oblasti připravených změn nebo-li indexu a zapíše z nich objekt stromu. Proto chcete-li vytvořit objekt stromu, musíte ze všeho nejdříve připravit soubory k zapsání, a vytvořit tak index. Chcete-li vytvořit index s jediným záznamem – první verzí souboru text.txt – můžete k tomu použít nízkoúrovňový příkaz update-index. Tento příkaz lze použít, jestliže chcete uměle přidat starší verzi souboru test.txt do nové oblasti připravených
@@ -170,7 +170,7 @@ Všimněte si, že tento strom má oba záznamy souborů a že hodnota SHA soubo
 
 Pokud byste vytvořili pracovní adresář z nového stromu, který jste právě zapsali, dostali byste dva soubory na nejvyšší úrovni pracovního adresáře a podadresář bak, obsahující první verzi souboru test.txt. Data, která Git pro tyto struktury obsahuje, si můžete představit jako ilustraci na obrázku 9.2.
 
-^Insert 18333fig0902.png 
+Insert 18333fig0902.png 
 Obrázek 9-2. Struktura obsahu vašich současných dat Git
 
 ### Objekty revize ###
@@ -247,7 +247,7 @@ Všechny tři tyto objekty revizí ukazují na jeden ze tří stromů snímku, k
 
 Pokud byste hledali vztahy mezi všemi interními ukazateli, vyšel by vám celý diagram objektů – viz obrázek 9.3
 
-^Insert 18333fig0903.png 
+Insert 18333fig0903.png 
 obrázek 9-3. Všechny objekty v adresáři Git
 
 ### Ukládání objektů ###
@@ -334,7 +334,7 @@ Vaše větev bude obsahovat pouze práci od této revize níže:
 
 Vaše databáze Git bude nyní v principu vypadat tak, jak je znázorněno na obrázku 9.4.
 
-^Insert 18333fig0904.png 
+Insert 18333fig0904.png 
 Obrázek 9-4. Objekty v adresáři Git s referencemi větve „head“
 
 Spouštíte-li příkaz typu git branch (název větve), Git ve skutečnosti spustí příkaz update-ref a vloží hodnotu SHA-1 poslední revize větve, na níž se nacházíte, do nové reference, kterou chcete vytvořit.
